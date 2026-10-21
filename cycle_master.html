@@ -12,7 +12,13 @@ nav.cycle-menu{background:#1f3a5f;display:flex;gap:4px;padding:0 16px}
 nav.cycle-menu a{color:#fff;text-decoration:none;padding:14px 20px}
 nav.cycle-menu a:hover{background:#2f5185}
 nav.cycle-menu a.active{background:#fff;color:#1f3a5f;font-weight:bold}
-iframe{flex:1;border:0;width:100%}
+.cycle-main{flex:1;display:flex;min-height:0}
+.tools-panel{width:220px;flex:none;border-left:1px solid #ccc;background:#f4f6fa;overflow:auto}
+.tools-panel h2{margin:0;padding:14px 16px;font-size:1em;background:#e1e7f0;color:#1f3a5f}
+.tools-panel a{display:block;padding:10px 16px;color:#1f3a5f;text-decoration:none;border-bottom:1px solid #dde3ec}
+.tools-panel a:hover{background:#e8eef7}
+.tools-panel a.active{background:#fff;font-weight:bold}
+iframe{flex:1;border:0;min-width:0}
 .cycle-footer{border-top:1px solid #ccc;padding:12px 32px;color:#555;font-size:.9em}
 </style>
 </head>
@@ -24,11 +30,19 @@ iframe{flex:1;border:0;width:100%}
 <a href="cycle_evaluation.html" target="cycle-frame" data-phase="evaluation">Evaluation</a>
 <a href="cycle_improvement.html" target="cycle-frame" data-phase="improvement">Improvement</a>
 </nav>
+<div class="cycle-main">
 <iframe name="cycle-frame" title="Exercise cycle content"></iframe>
+<aside class="tools-panel" aria-label="Exercise tools">
+<h2>Exercise tools</h2>
+<a href="exercise_document_media.html" target="cycle-frame" data-phase="documents">Documents &amp; Media</a>
+<a href="exercise_message_board.html" target="cycle-frame" data-phase="messages">Message Boards</a>
+<a href="exercise_national_calendar.html" target="cycle-frame" data-phase="calendar">National Exercise Calendar</a>
+</aside>
+</div>
 <footer class="cycle-footer">Exercise Cycle: Design &rarr; Conduct &rarr; Evaluation &rarr; Improvement</footer>
 <script>
 (function () {
-  var links = document.querySelectorAll('nav.cycle-menu a');
+  var links = document.querySelectorAll('nav.cycle-menu a, .tools-panel a');
   var frame = document.querySelector('iframe');
   function show(link) {
     for (var i = 0; i < links.length; i++) {
@@ -42,7 +56,7 @@ iframe{flex:1;border:0;width:100%}
   for (var i = 0; i < links.length; i++) {
     links[i].addEventListener('click', function (e) { e.preventDefault(); show(this); });
   }
-  var start = document.querySelector('nav.cycle-menu a[data-phase="' + location.hash.slice(1) + '"]') || links[0];
+  var start = document.querySelector('a[data-phase="' + location.hash.slice(1) + '"]') || links[0];
   show(start);
 })();
 </script>
