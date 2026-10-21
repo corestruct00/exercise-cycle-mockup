@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0, width=device-width">
+<title>Exercise Cycle</title>
+<style>
+html,body{height:100%;margin:0}
+body{display:flex;flex-direction:column;font-family:Arial,sans-serif;color:#222}
+.cycle-header{background:#12263f;color:#fff;padding:16px 32px;font-size:1.2em;font-weight:bold}
+nav.cycle-menu{background:#1f3a5f;display:flex;gap:4px;padding:0 16px}
+nav.cycle-menu a{color:#fff;text-decoration:none;padding:14px 20px}
+nav.cycle-menu a:hover{background:#2f5185}
+nav.cycle-menu a.active{background:#fff;color:#1f3a5f;font-weight:bold}
+iframe{flex:1;border:0;width:100%}
+.cycle-footer{border-top:1px solid #ccc;padding:12px 32px;color:#555;font-size:.9em}
+</style>
+</head>
+<body>
+<header class="cycle-header">Exercise Cycle</header>
+<nav class="cycle-menu" aria-label="Exercise cycle">
+<a href="cycle_design.html" target="cycle-frame" data-phase="design">Design</a>
+<a href="cycle_conduct.html" target="cycle-frame" data-phase="conduct">Conduct</a>
+<a href="cycle_evaluation.html" target="cycle-frame" data-phase="evaluation">Evaluation</a>
+<a href="cycle_improvement.html" target="cycle-frame" data-phase="improvement">Improvement</a>
+</nav>
+<iframe name="cycle-frame" title="Exercise cycle content"></iframe>
+<footer class="cycle-footer">Exercise Cycle: Design &rarr; Conduct &rarr; Evaluation &rarr; Improvement</footer>
+<script>
+(function () {
+  var links = document.querySelectorAll('nav.cycle-menu a');
+  var frame = document.querySelector('iframe');
+  function show(link) {
+    for (var i = 0; i < links.length; i++) {
+      links[i].classList.toggle('active', links[i] === link);
+      if (links[i] === link) links[i].setAttribute('aria-current', 'page');
+      else links[i].removeAttribute('aria-current');
+    }
+    frame.src = link.getAttribute('href');
+    history.replaceState(null, '', '#' + link.dataset.phase);
+  }
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function (e) { e.preventDefault(); show(this); });
+  }
+  var start = document.querySelector('nav.cycle-menu a[data-phase="' + location.hash.slice(1) + '"]') || links[0];
+  show(start);
+})();
+</script>
+</body>
+</html>
