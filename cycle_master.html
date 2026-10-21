@@ -20,15 +20,31 @@ nav.cycle-menu a.active{background:#fff;color:#1f3a5f;font-weight:bold}
 .tools-panel a.active{background:#fff;font-weight:bold}
 iframe{flex:1;border:0;min-width:0}
 .cycle-footer{border-top:1px solid #ccc;padding:12px 32px;color:#555;font-size:.9em}
+@font-face{font-family:FontAwesome;src:url(assets/fontawesome-webfont.woff2) format("woff2"),url(assets/fontawesome-webfont.woff) format("woff"),url(assets/fontawesome-webfont.ttf) format("truetype")}
+.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;-webkit-font-smoothing:antialiased}
+.fa-file-text:before{content:"\f15c"}.fa-file-text-o:before{content:"\f0f6"}.fa-id-card-o:before{content:"\f2c3"}.fa-bolt:before{content:"\f0e7"}.fa-trash-o:before{content:"\f014"}
+nav.cycle-menu{align-items:stretch}
+.cycle-actions{margin-left:auto;display:flex;align-items:center;gap:6px}
+.cycle-actions .btn-group{position:relative}
+.cycle-actions .btn{background:#fff;color:#1f3a5f;border:1px solid #ccc;border-radius:3px;padding:6px 12px;font-size:14px;cursor:pointer}
+.cycle-actions .btn:hover{background:#e8eef7}
+.cycle-actions .caret{display:inline-block;margin-left:2px;border-top:4px solid;border-left:4px solid transparent;border-right:4px solid transparent;vertical-align:middle}
+.cycle-actions .dropdown-menu{display:none;position:absolute;top:100%;right:0;z-index:1000;min-width:230px;margin:2px 0 0;padding:5px 0;list-style:none;background:#fff;border:1px solid #ccc;box-shadow:0 6px 12px rgba(0,0,0,.18);border-radius:3px}
+.cycle-actions .btn-group.open>.dropdown-menu{display:block}
+.cycle-actions .dropdown-menu a{display:block;padding:6px 16px;color:#222;text-decoration:none;white-space:nowrap}
+.cycle-actions .dropdown-menu a:hover{background:#e8eef7}
+.cycle-actions .dropdown-menu .fa{margin-right:6px}
+.cycle-actions .divider{height:1px;margin:5px 0;background:#e5e5e5}
 </style>
 </head>
 <body>
-<header class="cycle-header">Exercise Cycle</header>
+<header class="cycle-header">Exercise Cycle - <strong>NLE 2026</strong></header>
 <nav class="cycle-menu" aria-label="Exercise cycle">
 <a href="cycle_design.html" target="cycle-frame" data-phase="design">Design</a>
 <a href="cycle_conduct.html" target="cycle-frame" data-phase="conduct">Conduct</a>
 <a href="cycle_evaluation.html" target="cycle-frame" data-phase="evaluation">Evaluation</a>
 <a href="cycle_improvement.html" target="cycle-frame" data-phase="improvement">Improvement</a>
+<div class="cycle-actions"><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-text"></i> Reports <span class="caret"></span></button><ul class="dropdown-menu dropdown-menu-right" role="menu"><li role="menuitem"><a href="javascript:;"><i class="fa fa-file-text-o"></i> Exercise Summary</a></li><li role="menuitem"><a href="javascript:;"><i class="fa fa-file-text-o"></i> Exercise Plan</a></li><li role="menuitem"><a href="javascript:;"><i class="fa fa-file-text-o"></i> Situation Manual</a></li><li role="menuitem"><a href="javascript:;"><i class="fa fa-file-text-o"></i> CE Handbook</a></li><li role="menuitem"><a href="javascript:;"><i class="fa fa-file-text-o"></i> Export Exercise Member List</a></li><li class="divider"></li><li role="menuitem"><a href="javascript:;"><i class="fa fa-id-card-o"></i> Concept and Objective Presentation</a></li><li role="menuitem"><a href="javascript:;"><i class="fa fa-id-card-o"></i> Initial Meeting Presentation</a></li><li role="menuitem"><a href="javascript:;"><i class="fa fa-id-card-o"></i> Midterm Meeting Presentation</a></li><li role="menuitem"><a href="javascript:;"><i class="fa fa-id-card-o"></i> Final Meeting Presentation</a></li></ul></div><div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bolt"></i> Actions <span class="caret"></span></button><ul class="dropdown-menu dropdown-menu-right" role="menu"><li role="menuitem"><a href="javascript:;">Submit to National Exercise Calendar</a></li><li class="divider"></li><li role="menuitem"><a href="javascript:;"><i class="fa fa-trash-o"></i> Delete</a></li></ul></div></div>
 </nav>
 <div class="cycle-main">
 <iframe name="cycle-frame" title="Exercise cycle content"></iframe>
@@ -60,7 +76,17 @@ iframe{flex:1;border:0;min-width:0}
   }
   var start = document.querySelector('a[data-phase="' + location.hash.slice(1) + '"]') || links[0];
   show(start);
-})();
+  document.querySelectorAll('.cycle-actions [data-toggle="dropdown"]').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var g = b.parentElement, was = g.classList.contains('open');
+      document.querySelectorAll('.cycle-actions .btn-group.open').forEach(function (x) { x.classList.remove('open'); });
+      if (!was) g.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.cycle-actions .btn-group.open').forEach(function (x) { x.classList.remove('open'); });
+  });})();
 </script>
 </body>
 </html>
