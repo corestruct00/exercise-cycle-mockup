@@ -29,3 +29,7 @@ body>#content{width:auto;max-width:none;margin:0;padding:var(--cc-pad-y) var(--c
 .page-header-wrap{padding:var(--cc-pad-y) var(--cc-pad-x) 0}
 body>.page-header-wrap+#content{padding-top:16px}
 .panel{margin-bottom:16px}
+
+main {
+  padding: var(--cc-pad-y) var(--cc-pad-x);
+}
