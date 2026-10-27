@@ -7,6 +7,8 @@
 	<title>Evaluation - Exercise Cycle</title>
 	<link rel="stylesheet" href="cycle_evaluation.css">
 	<link rel="stylesheet" href="cycle_common.css?v=1">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body class="chrome yui3-skin-sam signed-in public-page site">
@@ -153,101 +155,51 @@
 						<div class="portlet-content portlet-content-editable">
 							<div class=" portlet-content-container">
 								<div class="portlet-body">
-									<table __gwtcellbasedwidgetimpldispatchingfocus="true" __gwtcellbasedwidgetimpldispatchingblur="true"
-										class="table table-striped table-condensed table-fixed" cellspacing="0">
-										<colgroup>
-											<col>
-											<col>
-											<col>
-											<col>
-											<col>
-											<col>
-											<col>
-											<col>
-										</colgroup>
-										<thead style="">
-											<tr __gwt_header_row="0">
-												<th colspan="1" class="gwtb3-d gwtb3-d col-button" __gwt_column="column-gwt-uid-47"
-													__gwt_header="header-gwt-uid-48"><span class="sr-only">Expand</span></th>
-												<th colspan="1" class="gwtb3-d" __gwt_column="column-gwt-uid-49"></th>
-												<th colspan="1" class="gwtb3-d gwtb3-d gwtb3-d" __gwt_column="column-gwt-uid-50" role="button"
-													tabindex="1">
-													<div style="position:relative;zoom:1;padding-left:17px;">
-														<div style="position:absolute;top:50.0%;line-height:0.0px;margin-top:-4px;left:0.0px;">
-															<img alt="Sorted A-Z"
-																src="https://www.demo.preptoolkit.org/o/pt/scripts/pt/clear.cache.gif"
-																style="width:11px;height:7px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAYAAADebrddAAAAjUlEQVR4XmNgwALyKrumFRf3iKCLY4D8yq4qoOL/eRWd29HlUEBeeYdNXmXnfzCuAON6dDVgALI2t6LzMUhRLkghRNO/vKpOR3S1DLmVnTsgCrqgGGp6Zeez/KpWcbhCoO4mJEls+EBCfT0HQ15pl2pueedZoNUXQDRQ4jKQfTkPhCvB+HxuRdd1oM0hAPwcZIjP6ejiAAAAAElFTkSuQmCC) no-repeat 0px 0px;"
-																border="0">
-														</div>
-														<div __gwt_header="header-gwt-uid-51">Evaluator</div>
-													</div>
-												</th>
-												<th colspan="1" class="gwtb3-d gwtb3-d" __gwt_column="column-gwt-uid-52" role="button"
-													tabindex="1" __gwt_header="header-gwt-uid-53">Evaluation Venue</th>
-												<th colspan="1" class="gwtb3-d gwtb3-d" __gwt_column="column-gwt-uid-54" role="button"
-													tabindex="1" __gwt_header="header-gwt-uid-55">Completed</th>
-												<th colspan="1" class="gwtb3-d gwtb3-d" __gwt_column="column-gwt-uid-56" role="button"
-													tabindex="1" __gwt_header="header-gwt-uid-57">Exercise Objective</th>
-												<th colspan="1" class="gwtb3-d gwtb3-d" __gwt_column="column-gwt-uid-58" role="button"
-													tabindex="1" __gwt_header="header-gwt-uid-59">Core Capability</th>
-												<th colspan="1" class="gwtb3-d gwtb3-d gwtb3-d" __gwt_column="column-gwt-uid-60" role="button"
-													tabindex="1" __gwt_header="header-gwt-uid-61">Evaluator's Overall EEG
-													Rating</th>
+									<table class="table table-striped table-condensed table-fixed">
+										<thead>
+											<tr>
+												<th scope="col" class="col-button"><span class="sr-only">Expand</span></th>
+												<th scope="col"><span class="sr-only">Actions</span></th>
+												<th scope="col" aria-sort="ascending">Evaluator</th>
+												<th scope="col">Evaluation Venue</th>
+												<th scope="col">Completed</th>
+												<th scope="col">Exercise Objective</th>
+												<th scope="col">Core Capability</th>
+												<th scope="col">Evaluator's Overall EEG Rating</th>
 											</tr>
 										</thead>
-										<tbody style="display: none;"></tbody>
-										<tbody style="">
-											<tr __gwt_row="0" __gwt_subrow="0" class="even">
-												<td class="gwtb3-cell gwtb3-d gwtb3-d col-button">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-480"><button type="button"
-															onclick="this.blur()" class="btn btn-link  sr-only-focusable-container"><i
-																class="fa fa-plus-square-o"></i><span class="sr-only sr-only-focusable">
-																Expand</span></button></div>
+										<tbody>
+											<tr>
+												<td class="col-button">
+													<button type="button" class="btn btn-link sr-only-focusable-container"><i
+															class="fa fa-plus-square-o"></i><span class="sr-only sr-only-focusable">
+															Expand</span></button>
 												</td>
-												<td class="gwtb3-cell gwtb3-d">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-481">
-														<div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle btn-xs"
-																data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bolt"></i> Actions
-																<span class="caret"></span></button>
-															<ul class="dropdown-menu" role="menu">
-																<li role="menuitem"><a href="javascript:;"><i class="fa fa-pencil-square-o"></i>
-																		Edit</a></li>
-																<li role="menuitem"><a href="javascript:;"><i class="fa fa-file-o"></i> Print
-																		EEG</a></li>
-																<li class="divider"></li>
-																<li role="menuitem"><a href="javascript:;">Complete</a></li>
-																<li class="divider"></li>
-																<li role="menuitem"><a href="javascript:;"><i class="fa fa-trash-o"></i>
-																		Delete</a></li>
-															</ul>
-														</div>
+												<td>
+													<div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle btn-xs"
+															data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bolt"></i> Actions
+															<span class="caret"></span></button>
+														<ul class="dropdown-menu" role="menu">
+															<li role="menuitem"><a href="javascript:;"><i class="fa fa-pencil-square-o"></i>
+																	Edit</a></li>
+															<li role="menuitem"><a href="javascript:;"><i class="fa fa-file-o"></i> Print
+																	EEG</a></li>
+															<li class="divider"></li>
+															<li role="menuitem"><a href="javascript:;">Complete</a></li>
+															<li class="divider"></li>
+															<li role="menuitem"><a href="javascript:;"><i class="fa fa-trash-o"></i>
+																	Delete</a></li>
+														</ul>
 													</div>
 												</td>
-												<td class="gwtb3-cell gwtb3-d">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-483">Tom Gallagher</div>
-												</td>
-												<td class="gwtb3-cell gwtb3-d">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-484">Diablo Canyon Power
-														Plant - CA - Conduct</div>
-												</td>
-												<td class="gwtb3-cell gwtb3-d">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-485"></div>
-												</td>
-												<td class="gwtb3-cell gwtb3-d">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-486">Public Warning
-													</div>
-												</td>
-												<td class="gwtb3-cell gwtb3-d">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-487">Prevention - Public
-														Information and Warning</div>
-												</td>
-												<td class="gwtb3-cell gwtb3-d gwtb3-d">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-488">Performed with Some
-														Challenges (S)</div>
-												</td>
+												<td>Tom Gallagher</td>
+												<td>Diablo Canyon Power Plant - CA - Conduct</td>
+												<td></td>
+												<td>Public Warning</td>
+												<td>Prevention - Public Information and Warning</td>
+												<td>Performed with Some Challenges (S)</td>
 											</tr>
 										</tbody>
-										<tfoot aria-hidden="true" style="display: none;"></tfoot>
 									</table>
 
 								</div>
@@ -288,50 +240,27 @@
 									<div class="btn-group pull-right"><button type="button" class="btn btn-default btn-xs" style=""><i
 												class="fa fa-file-o"></i> Print AAR</button></div>
 
-									<table __gwtcellbasedwidgetimpldispatchingfocus="true" __gwtcellbasedwidgetimpldispatchingblur="true"
-										class="table table-striped table-condensed table-fixed" cellspacing="0">
-										<colgroup>
-											<col>
-											<col>
-											<col>
-											<col>
-										</colgroup>
-										<thead style="">
-											<tr __gwt_header_row="0">
-												<th colspan="1" class="gwtb3-d gwtb3-d col-button" __gwt_column="column-gwt-uid-10"
-													__gwt_header="header-gwt-uid-11"><span class="sr-only">View</span></th>
-												<th colspan="1" class="gwtb3-d" __gwt_column="column-gwt-uid-12"
-													__gwt_header="header-gwt-uid-13">Exercise Objective</th>
-												<th colspan="1" class="gwtb3-d" __gwt_column="column-gwt-uid-14"
-													__gwt_header="header-gwt-uid-15">Core Capability</th>
-												<th colspan="1" class="gwtb3-d gwtb3-d" __gwt_column="column-gwt-uid-16"
-													__gwt_header="header-gwt-uid-17">Final Rating</th>
+									<table class="table table-striped table-condensed table-fixed">
+										<thead>
+											<tr>
+												<th scope="col" class="col-button"><span class="sr-only">View</span></th>
+												<th scope="col">Exercise Objective</th>
+												<th scope="col">Core Capability</th>
+												<th scope="col">Final Rating</th>
 											</tr>
 										</thead>
-										<tbody style="display: none;"></tbody>
-										<tbody style="">
-											<tr __gwt_row="0" __gwt_subrow="0" class="even">
-												<td class="gwtb3-cell gwtb3-d gwtb3-d col-button">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-506"><button type="button"
-															onclick="this.blur()" class="btn btn-link  sr-only-focusable-container"><i
-																class="fa fa-pencil-square-o"></i><span class="sr-only sr-only-focusable">
-																Update</span></button></div>
+										<tbody>
+											<tr>
+												<td class="col-button">
+													<button type="button" class="btn btn-link sr-only-focusable-container"><i
+															class="fa fa-pencil-square-o"></i><span class="sr-only sr-only-focusable">
+															Update</span></button>
 												</td>
-												<td class="gwtb3-cell gwtb3-d">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-507">Public Warning
-													</div>
-												</td>
-												<td class="gwtb3-cell gwtb3-d">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-508">Prevention - Public
-														Information and Warning</div>
-												</td>
-												<td class="gwtb3-cell gwtb3-d gwtb3-d">
-													<div style="outline-style:none;" __gwt_cell="cell-gwt-uid-509">Performed with Some
-														Challenges (S)</div>
-												</td>
+												<td>Public Warning</td>
+												<td>Prevention - Public Information and Warning</td>
+												<td>Performed with Some Challenges (S)</td>
 											</tr>
 										</tbody>
-										<tfoot aria-hidden="true" style="display: none;"></tfoot>
 									</table>
 								</div>
 							</div>
